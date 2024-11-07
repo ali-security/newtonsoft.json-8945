@@ -2276,7 +2276,7 @@ keyword such as type of business.""
   ""Char"": ""\u0000""
 }";
 #else
-      expected = @"{
+            expected = @"{
   ""String"": ""string"",
   ""Int32"": 2147483647,
   ""UInt32"": 4294967295,
@@ -5718,7 +5718,7 @@ Path '', line 1, position 1.");
         [Test]
         public void SerializeNullableGuidCustomWriterOverridesNullableGuid()
         {
-            NullableGuid ng = new NullableGuid {Id = Guid.Empty};
+            NullableGuid ng = new NullableGuid { Id = Guid.Empty };
             NullableGuidCountingJsonTextWriter writer = new NullableGuidCountingJsonTextWriter(new StreamWriter(Stream.Null));
             JsonSerializer serializer = JsonSerializer.Create();
             serializer.Serialize(writer, ng);
@@ -6503,7 +6503,7 @@ Path '', line 1, position 1.");
         {
             string json = "{one:1} // This is just a comment";
 
-            JsonSerializerSettings settings = new JsonSerializerSettings {CheckAdditionalContent = true};
+            JsonSerializerSettings settings = new JsonSerializerSettings { CheckAdditionalContent = true };
             JsonSerializer s = JsonSerializer.Create(settings);
             IDictionary<string, int> o = s.Deserialize<Dictionary<string, int>>(new JsonTextReader(new StringReader(json)));
 
@@ -6521,7 +6521,7 @@ lines.*/
 
 // This is just another comment.";
 
-            JsonSerializerSettings settings = new JsonSerializerSettings {CheckAdditionalContent = true};
+            JsonSerializerSettings settings = new JsonSerializerSettings { CheckAdditionalContent = true };
             JsonSerializer s = JsonSerializer.Create(settings);
             IDictionary<string, int> o = s.Deserialize<Dictionary<string, int>>(new JsonTextReader(new StringReader(json)));
 
@@ -7985,6 +7985,7 @@ This is just junk, though.";
             serializer.Deserialize(reader);
 
             Assert.AreEqual(128, reader.MaxDepth);
+        }
 
     }
 }
