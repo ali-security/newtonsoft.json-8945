@@ -1,7 +1,7 @@
 ﻿properties {
   $zipFileName = "Json120r2.zip"
   $majorVersion = "12.0"
-  $majorWithReleaseVersion = "12.0.2"
+  $majorWithReleaseVersion = "12.0.2-sp1"
   $nugetPrerelease = $null
   $version = GetVersion $majorWithReleaseVersion
   $packageId = "Newtonsoft.Json"
